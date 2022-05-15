@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+<listeners>
+<listener class-name="extentReportPackage.ExtentReportTestNG"/>
+</listeners>
+  <test name="AllTests">
+    <classes>
+       <class name="calculator.TestCases.BasicCalculatorHome"/>
+       <class name="calculator.TestCases.Addition"/>
+       <class name="calculator.TestCases.Subtraction"/>
+       <class name="calculator.TestCases.Multiply"/>
+       <class name="calculator.TestCases.Divide"/>
+       <class name="calculator.TestCases.Concatenate"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
