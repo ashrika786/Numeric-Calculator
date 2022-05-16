@@ -9,7 +9,6 @@ import java.util.concurrent.TimeUnit;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 public class DriverManager {
@@ -33,7 +32,6 @@ public class DriverManager {
 	
 	public static void DriverInitialization() {
 		String OsName = System.getProperty("os.name", "generic").toLowerCase(Locale.ENGLISH);
-		System.out.println("OsName: "+OsName);
 		
 		String browserName = prop.getProperty("browser");
 		
@@ -52,15 +50,6 @@ public class DriverManager {
 				System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/Drivers/chromedriverWindows.exe");
 				driver = new ChromeDriver();
 			}
-		}
-		
-
-		else if(browserName.equalsIgnoreCase("InternetExplorer")) {
-			System.setProperty("webdriver.IEDriverServer.driver", System.getProperty("user.dir") + "/Drivers/IEDriverServer.exe");
-			driver = new InternetExplorerDriver();
-		}
-		else {
-			System.out.println("Driver "+ browserName + " not supported/Invalid");
 		}
 		
 		driver.manage().window().maximize();
